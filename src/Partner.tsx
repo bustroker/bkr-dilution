@@ -2,12 +2,12 @@
 interface PartnerProps {
     id: number;
     initialPercentage: number;
-    calculatedPercentage: number|undefined;
+    dilutedPercentage: number|undefined;
     onRemove: (id: number) => void;
     onChange: (id: number, value: number) => void;
   }
   
-  const Partner: React.FC<PartnerProps> = ({ id, initialPercentage, calculatedPercentage, onRemove, onChange }) => {
+  const Partner: React.FC<PartnerProps> = ({ id, initialPercentage, dilutedPercentage, onRemove, onChange }) => {
     return (
       <div className="textbox-container">
         <text className="partner-label">Initial shares percentage partner {id}</text>
@@ -22,9 +22,9 @@ interface PartnerProps {
         />
         <text className="percentage-label">%</text>
         
-        {calculatedPercentage != undefined &&
+        {dilutedPercentage != undefined &&
         <div>
-            <text className="newpartner-label">{calculatedPercentage}</text>
+            <text className="newpartner-label">{dilutedPercentage}</text>
             <text className="newpercentage-label">%</text>
         </div>
         }

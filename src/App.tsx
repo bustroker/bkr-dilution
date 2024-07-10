@@ -3,12 +3,12 @@ import './App.css';
 import Partner from "./Partner"
 
 const App: React.FC = () => {
-  const [partners, setPartners] = useState<{ id: number; initialPercentage: number, calculatedPercentage: number|undefined }[]>([{id: 1, initialPercentage: 100, calculatedPercentage: undefined}]);
+  const [partners, setPartners] = useState<{ id: number; initialPercentage: number, dilutedPercentage: number|undefined }[]>([{id: 1, initialPercentage: 100, dilutedPercentage: undefined}]);
   const [newPartnerSharesPercentage, setNewPartnerSharesPercentage] = useState<number>(0); // State for the additional numeric textbox
 
 
   const addPartner = () => {
-    setPartners([...partners, { id: partners.length + 1, initialPercentage: 0, calculatedPercentage: undefined }]);
+    setPartners([...partners, { id: partners.length + 1, initialPercentage: 0, dilutedPercentage: undefined }]);
   };
 
   const removePartner = (id: number) => {
@@ -21,14 +21,7 @@ const App: React.FC = () => {
     );
   };
 
-  const calculateFinalPercentage = (initialPercentage: number, newPartnerPercentage: number) => {
-
-    const dilutionPercentage = newPartnerPercentage;
-    const lostPercentage = initialPercentage * dilutionPercentage/100;
-    return initialPercentage - lostPercentage;
-  }
-
-  const calculateWithDilution = (initialPercentage: number, newPartnerPercentage: number) => {
+  const applyDilution = (initialPercentage: number, newPartnerPercentage: number) => {
     const k: number = initialPercentage;    
     const n: number = newPartnerPercentage;
 
@@ -39,7 +32,7 @@ const App: React.FC = () => {
   const calculate = () => {
 
     const calculatedPartners = partners.map(partner => {
-      partner.calculatedPercentage = calculateFinalPercentage(partner.initialPercentage, newPartnerSharesPercentage); 
+      partner.dilutedPercentage = applyDilution(partner.initialPercentage, newPartnerSharesPercentage); 
       return partner;
     });
     console.log(JSON.stringify(calculatedPartners));
@@ -49,7 +42,7 @@ const App: React.FC = () => {
 
   const reset = () => {
     const resetPartners = partners.map(partner => {
-      partner.calculatedPercentage = undefined; 
+      partner.dilutedPercentage = undefined; 
       return partner;
     });
     console.log(JSON.stringify(resetPartners));
@@ -65,7 +58,7 @@ const App: React.FC = () => {
               key={partner.id}
               id={partner.id}
               initialPercentage={partner.initialPercentage}
-              calculatedPercentage={partner.calculatedPercentage}
+              dilutedPercentage={partner.dilutedPercentage}
               onRemove={removePartner}
               onChange={handleTextboxChange}
             />
