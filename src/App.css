@@ -1,0 +1,96 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.columns-container {
+  display: flex;
+  flex-direction: row; /* Added to align columns horizontally */
+}
+
+.textbox-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textbox-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.minus-button {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.partner-label {
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.percentage-label {
+  /* margin-left: 10px; */
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.number-input {
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.add-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.newpartner-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.newpartner-number-input {
+  /* margin-left: 20px; 
+  margin-top: 30px; */
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 0; /* Adjust or remove margin-top */
+}
+
+.newpartner-label {
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.calculate-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 200px; /* Set fixed width to match input boxes */
+  background-color:grey;
+}
+
+.vertical-line {
+  width: 2px; /* Width of the vertical line */
+  background-color: #000; /* Color of the vertical line */
+  margin: 0 20px; /* Margin to separate the columns */
+  height: 100%; /* Full height of the container */
+}
