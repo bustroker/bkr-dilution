@@ -8,3 +8,5 @@ npx create-react-app bkr-dilution --template typescript
 npm start
 ```
 
+### PWA
+The `create-react-app` commands already adds `manifest.json` for Progressive Web App.
