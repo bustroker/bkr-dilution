@@ -22,10 +22,17 @@ const App: React.FC = () => {
   };
 
   const calculateFinalPercentage = (initialPercentage: number, newPartnerPercentage: number) => {
+
+    const dilutionPercentage = newPartnerPercentage;
+    const lostPercentage = initialPercentage * dilutionPercentage/100;
+    return initialPercentage - lostPercentage;
+  }
+
+  const calculateWithDilution = (initialPercentage: number, newPartnerPercentage: number) => {
     const k: number = initialPercentage;    
     const n: number = newPartnerPercentage;
 
-    const result = k*(100-n)/100;
+    const result = k*(1-n/100);
     return result;
   }
 
