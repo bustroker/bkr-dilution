@@ -1,96 +1,96 @@
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f0f0f0;
-}
-
-.columns-container {
-  display: flex;
-  flex-direction: row; /* Added to align columns horizontally */
-}
-
-.textbox-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.textbox-container {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.minus-button {
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 5px 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.partner-label {
-  margin-right: 10px;
-  padding: 5px 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.percentage-label {
-  /* margin-left: 10px; */
-  padding: 5px 10px;
-  font-size: 16px;
-}
-
-.number-input {
-  padding: 5px;
-  font-size: 16px;
-  text-align: center;
-}
-
-.add-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.newpartner-container {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.newpartner-number-input {
-  /* margin-left: 20px; 
-  margin-top: 30px; */
-  padding: 5px;
-  font-size: 16px;
-  text-align: center;
-  margin-top: 0; /* Adjust or remove margin-top */
-}
-
-.newpartner-label {
-  margin-right: 10px;
-  padding: 5px 10px;
-  font-size: 16px;
-}
-
-.calculate-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 20px;
-  cursor: pointer;
-  width: 200px; /* Set fixed width to match input boxes */
-  background-color:grey;
-}
-
-.vertical-line {
-  width: 2px; /* Width of the vertical line */
-  background-color: #000; /* Color of the vertical line */
-  margin: 0 20px; /* Margin to separate the columns */
-  height: 100%; /* Full height of the container */
-}
+/* App.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .App {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .textbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .partner-label, .percentage-label, .newpartner-label, .newpercentage-label {
+    margin-right: 10px;
+  }
+  
+  .number-input {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .minus-button, .add-button, .calculate-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .minus-button:hover, .add-button:hover, .calculate-button:hover {
+    background-color: #5a6268;
+  }
+  
+  .minus-button {
+    background-color: #c82333;
+  }
+  
+  .minus-button:hover {
+    background-color: #bd2130;
+  }
+  
+  .add-button {
+    background-color: #218838;
+    margin-top: 10px;
+  }
+  
+  .add-button:hover {
+    background-color: #1e7e34;
+  }
+  
+  .calculate-button {
+    background-color: #e0a800;
+    margin-top: 10px;
+  }
+  
+  .calculate-button:hover {
+    background-color: #d39e00;
+  }
+  
+  .newpartner-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .newpartner-number-input {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
